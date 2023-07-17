@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
-function CategoryFilter({ categories }) {
+function CategoryFilter({ categories, handleCategoryChange }) {
 
   function handleClick (event) {
-    const btn = event.target;
-    btn.className = "selected";
+    event.target.className="selected";
+    handleCategoryChange(event);
   }
   
   const btnElement = categories.map((category) => {
